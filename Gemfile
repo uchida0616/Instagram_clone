@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
