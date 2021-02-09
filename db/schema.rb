@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_055954) do
+ActiveRecord::Schema.define(version: 2021_02_09_112715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_055954) do
     t.string "title"
     t.text "content"
     t.bigint "user_id"
+    t.text "image"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

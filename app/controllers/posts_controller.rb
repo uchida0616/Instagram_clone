@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if params[:back]
+      @post = Post.new(post_params)
+    else
+      @post = Post.new
+    end
   end
 
   def create
@@ -51,7 +55,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :image, :image_cache)
   end
 
   def set_blog
