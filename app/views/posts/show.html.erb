@@ -3,7 +3,7 @@
 <p>内容: <%= @post.content %></p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @post.image.url %>
+  <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
 </p>
 <% unless @post.user_id == current_user.id %>
   <% if @favorite.present? %>
@@ -12,3 +12,4 @@
     <%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+<%= link_to "投稿一覧画面に戻る", posts_path %>

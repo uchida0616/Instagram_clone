@@ -1,0 +1,47 @@
+.login_box {
+  text-align: center;
+  height: auto;
+  margin:10em auto;
+  width: 350px;
+  padding: 1em;
+  background-color: rgba(var(--d87,255,255,255),1);
+  border: 1px solid #DDDDDD;
+  position: relative;
+  top: 5px;
+}
+.login_btn {
+  margin-top: 10px;
+  width: 280px;
+  height: 35px;
+  background-color: rgba(0,149,246,.3);
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+}
+.login_btn:hover {
+  background-color: #0095f6;
+}
+.login_header {
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+.new_signup_box p {
+  display: inline-block;
+}
+.new_signup_box {
+  text-align: center;
+  height: auto;
+  margin:10em auto;
+  width: 350px;
+  padding: 1em;
+  background-color: rgba(var(--d87,255,255,255),1);
+  border: 1px solid #DDDDDD;
+  position: relative;
+  bottom: 125px;
+}
+.siginup_url {
+  font-weight: bold;
+}

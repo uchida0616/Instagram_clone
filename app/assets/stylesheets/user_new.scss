@@ -1,0 +1,81 @@
+body {
+  background-color: #fafafa;
+}
+.signup_box {
+  text-align: center;
+  height: auto;
+  margin:10em auto;
+  width: 350px;
+  padding: 1em;
+  background-color: rgba(var(--d87,255,255,255),1);
+  border: 1px solid #DDDDDD;
+}
+.signup_header {
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 50px;
+}
+.text_field {
+  background-color: #fafafa;
+  border-color: #DCDCDC;
+  border-width: thin;
+  width: 280px;
+  height: 35px;
+  margin-bottom: 5px;
+}
+.email_field {
+  background-color: #fafafa;
+  border-color: #EEEEEE;
+  border-width: thin;
+  width: 280px;
+  height: 35px;
+  margin-bottom: 5px;
+}
+.password_field {
+  background-color: #fafafa;
+  border-color: #EEEEEE;
+  border-width: thin;
+  width: 280px;
+  height: 35px;
+  margin-bottom: 5px;
+}
+.confirm_password_field {
+  background-color: #fafafa;
+  border-color: #DDDDDD;
+  border-width: thin;
+  width: 280px;
+  height: 35px;
+}
+::placeholder {
+  font-size: 13px;
+  padding-left: 5px;
+}
+.signup_btn {
+  width: 280px;
+  height: 35px;
+  background-color: rgba(0,149,246,.3);
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+}
+.signup_btn:hover {
+  background-color: #0095f6;
+}
+.new_login_box {
+  text-align: center;
+  height: auto;
+  margin:10em auto;
+  width: 350px;
+  padding: 1em;
+  background-color: rgba(var(--d87,255,255,255),1);
+  border: 1px solid #DDDDDD;
+  position: relative;
+  bottom: 130px;
+}
+.new_login_box p{
+  display: inline-block;
+}
+.login_link {
+  font-weight: bold;
+}

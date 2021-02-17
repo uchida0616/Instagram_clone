@@ -1,5 +1,5 @@
 <h3>以下の内容で、送信する</h3>
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
@@ -7,8 +7,5 @@
   <p>タイトル:<%= @post.title %></p>
   <p>本文:<%= @post.content %></p>
   <%= form.submit "登録する" %>
-  <%= form_with(model:@post, url:new_post_path, local:true, method:"get") do |form| %>
-  <%= form.hidden_field :image_cache %>
   <%= form.submit "戻る", name: 'back' %>
-<% end %>
 <% end %>
