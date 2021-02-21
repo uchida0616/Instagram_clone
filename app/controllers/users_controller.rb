@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   def new
     @user = User.new
   end
@@ -7,13 +7,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
+      flash[:success] = 'ユーザーを登録しました。'
       redirect_to user_path(@user.id)
     else
+      flash.now[:danger] = 'ユーザーの登録に失敗しました。'
       render :new
     end
   end
 
   def show
+    # render layout: false
   end
 
   def edit
@@ -25,6 +29,11 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to new_user_path, notice:"アカウントを削除しました！"
   end
 
   private

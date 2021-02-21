@@ -1,5 +1,14 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+<% if @user.icon? %>
   <%= image_tag @user.icon.url %>
+<% else %>
+  <%= image_tag "/no_icon.png" %>
+<% end %>
+<% if @user.id == current_user.id %>
   <%= link_to "プロフィールを編集する", edit_user_path(@user.id) %>
-<%= link_to '新しくブロクを投稿する', new_post_path %>
+  <%= link_to "プロフィールを削除する", user_path(@user.id), method: :delete %>
+  <%= link_to '新しくブロクを投稿する', new_post_path %>
+<% else %>
+  <% link_to '投稿一覧へ', posts_path %>
+<% end %>
