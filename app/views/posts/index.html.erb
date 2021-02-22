@@ -13,9 +13,17 @@
     <td>
     <%= image_tag post.image.url  %>
     </td>
-    <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
-    <td><%= link_to "ブログを編集する", edit_post_path(post.id) %></td>
-    <td><%= link_to 'ブログを削除する', post_path(post.id), method: :delete ,data: { confirm: '削除しますか？'} %></td>
+    <% if post.user_id == current_user.id %>
+      <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+      <td><%= link_to "ブログを編集する", edit_post_path(post.id) %></td>
+      <td><%= link_to 'ブログを削除する', post_path(post.id), method: :delete ,data: { confirm: '削除しますか？'} %></td>
+    <% else %>
+      <% if post.favorites.present? %>
+        <td><%= link_to 'お気に入り解除する', favorite_path(id: post.favorites.ids), method: :delete, class: 'btn btn-danger' %><td>
+      <% else %>
+        <td><%= link_to 'お気に入りする', favorites_path(post_id: post.id), method: :post, class: 'btn btn-primary' %><td>
+      <% end %>
+    <% end %>
   </tr>
 <% end %>
 </table>

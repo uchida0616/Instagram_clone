@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   def edit
@@ -45,7 +44,7 @@ class PostsController < ApplicationController
 
   def confirm
     @post = Post.new(post_params)
-    @post.user_id = current_user.id
+    @post.user_id = current_user.id#
     render :new if @post.invalid?
   end
 
