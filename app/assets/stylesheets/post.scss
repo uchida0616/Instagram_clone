@@ -1,0 +1,72 @@
+.navbar-text {
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 25px;
+}
+.margin {
+  margin: 20px 0px 20px 20px !important;
+}
+.navbar {
+  border-bottom: 1px solid #dbdbdb;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.3em;
+  margin-top: 50px;
+}
+.card-header {
+  height: 60px;
+  padding-top: 15px;
+  font-weight: 600;
+}
+.img-circle {
+  border: 1px solid #dbdbdb;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+:focus {
+	outline:0;
+}
+.btn-default {
+  border: none;
+}
+.modal-dialog {
+  margin-top: 250px;
+  width: 400px;
+}
+ul {
+  padding: 0;
+}
+li {
+  line-height: 1.5;
+  margin-top: 1em;
+  border-bottom: 1px solid #dbdbdb;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+}
+.normal_link {
+  color: inherit;
+  font-weight: lighter;
+}
+.normal_link:hover{
+  text-decoration: none;
+  color: inherit;
+}
+.warning_link {
+  color: red;
+  font-weight: bold;
+}
+.warning_link:hover{
+  text-decoration: none;
+  color: red;
+}
+.like_btn {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.unlike_btn {
+  margin-left: 20px;
+  margin-top: 10px;
+}

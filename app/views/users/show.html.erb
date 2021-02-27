@@ -1,14 +1,32 @@
-<h1><%= @user.name %>のページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
-<% if @user.icon? %>
-  <%= image_tag @user.icon.url %>
-<% else %>
-  <%= image_tag "/no_icon.png" %>
-<% end %>
-<% if @user.id == current_user.id %>
-  <%= link_to "プロフィールを編集する", edit_user_path(@user.id) %>
-  <%= link_to "プロフィールを削除する", user_path(@user.id), method: :delete,data: { confirm: 'アカウントを削除しますか？'} %>
-  <%= link_to '新しくブロクを投稿する', new_post_path %>
-<% else %>
-  <% link_to '投稿一覧へ', posts_path(@post.id) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <% if @user.icon? %>
+        <%= image_tag @user.icon.url, size: '150x150', class: "img-circle"; %>
+      <% else %>
+        <%= image_tag "/no_icon.png", size: '150x150' %>
+      <% end %>
+    </div>
+    <div class="col-xs-3" style="margin-top: 20px; margin-left: 20px;">
+      <h1><%= @user.name %></h1>
+    </div>
+    <div class="col-xs-0">
+      <% if @user.id == current_user.id %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16" data-toggle="modal" data-target="#testModal" style="margin-top: 30px;">
+          <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
+        </svg>
+        <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <ul>
+                  <li><%= link_to "プロフィールを編集する", edit_user_path(@user.id), class: "normal_link" %></li>
+                  <li><%= link_to "プロフィールを削除する", user_path(@user.id), method: :delete,data: { confirm: 'アカウントを削除しますか？'}, class: "normal_link" %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
