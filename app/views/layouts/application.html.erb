@@ -15,9 +15,6 @@
     <span class="navbar-text">
       Instagram
     </span>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
     <% if logged_in? %>
       <%= link_to user_path(current_user.id) do %>
         <span class="pull-right margin">
