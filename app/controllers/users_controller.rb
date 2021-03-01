@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :favorite_post]
                 :authenticate_user!
   def new
     @user = User.new
@@ -35,6 +35,11 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to new_user_path, notice:"アカウントを削除しました！"
+  end
+
+  def favorite_post
+    @favorites = current_user.favorite_posts.all
+
   end
 
   private

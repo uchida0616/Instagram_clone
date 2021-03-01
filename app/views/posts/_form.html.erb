@@ -9,20 +9,24 @@
       </ul>
     </div>
   <% end %>
-  <div class="post_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="container">
+    <div class="row">
+      <div class="post_box">
+        <div class="title_field">
+          <%= form.text_field :title, placeholder: "タイトル" %>
+        </div>
+        <div class="content_filed">
+          <%= form.text_field :content, placeholder: "本文" %>
+        </div>
+        <div align="center">
+          <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+          <%= form.file_field :image%>
+          <%= form.hidden_field :image_cache %>
+        </div>
+        <div class="sumbit_btn">
+          <%= form.submit "投稿する" %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="post_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <div class="field">
-    <%= form.label :image %><br />
-  <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-  </div>
-    <%= form.submit %>
 <% end %>
-<%= link_to "投稿一覧画面に戻る", posts_path %>
